@@ -332,9 +332,9 @@ img {
 
 /* Remove extra left and right margins, due to padding */
 
-.row {
+/* .row {
     margin: 2rem;
-}
+} */
 
 
 /* Clear floats after the columns */
