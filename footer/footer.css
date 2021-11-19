@@ -1,10 +1,6 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-.main-container {
+
+.main-container {font-family: axiforma-regular,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     width: 100%;
 }
 
@@ -17,7 +13,6 @@ body {
     height: 700px;
     width: 100%;
     position: relative;
-    margin-top: 20px;
 }
 
 .footer .footer-content {
@@ -43,7 +38,7 @@ a {
 }
 
 .footer .footer-content .about h1 span {
-    color: hsl(256, 83%, 48%);
+    color: #0CDDFF;
 }
 
 .footer .footer-content .about .contact span {
@@ -54,7 +49,6 @@ a {
 }
 
 .footer .footer-content .about .socials a {
-    border: 1px solid gray;
     width: 45px;
     height: 41px;
     color: white;
@@ -63,15 +57,26 @@ a {
     text-align: center;
     display: inline-block;
     font-size: 1.3em;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: all .3s;
+    border: 1px solid rgb(255, 255, 255);
 }
 
-.footer .footer-content .about .socials a:hover {
-    border: 1px solid white;
-    color: blue;
-    transition: all .3s;
-}
+
+
+
+.footer .footer-content .about .socials  a .icon {
+    position: relative;
+    /* color: #262626; */
+    transition: .5s;
+    z-index: 3;
+  }
+
+  .footer .footer-content .about .socials  a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+  }
+
 
 .footer ul {
     list-style: none;
@@ -86,7 +91,7 @@ a {
 }
 
 .footer .footer-content .links ul a:hover {
-    color: blue;
+    color: #343a40;
     text-decoration: none;
     margin-left: 15px;
     transition: all .3s;
@@ -150,33 +155,48 @@ a {
         padding-bottom: 90px;
     }
     .footer .footer-content .contact-form .contact-btn {
-        width: 100%;
+        /* width: 100%; */
+        margin-bottom: 20px;
     }
 }
 
 
 /* terms and condition */
+.main-container-22{
+    padding: 30px;
+}
+
+.main-container-22 h1{
+    text-align: center;
+    font-weight: 600;
+    color: #424242;
+    font-size: 28px;
+    line-height: 36px;
+}
 
 .tnc-container {
     width: 98%;
-    padding: 50px;
+    padding: 30px;
     text-align: justify;
-    background-color: #D7E9F7;
-    margin-left: 15px;
-    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #D7E9F7;
+    background-color: rgb(255, 255, 255);
+   margin: 30px 0 20px 30px;
 }
 
 .tnc-container h2 {
+    color: grey;
     text-align: initial;
-    padding-top: 30px;
-    font-size: 1.5rem;
+    padding-top: 0px 30px 30px 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
     font-family: 'Roboto Slab', serif;
 }
 
 .tnc-container p,
 ol {
     text-align: justify;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: 'Roboto Slab', serif;
 }
 

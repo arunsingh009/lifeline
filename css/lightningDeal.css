@@ -15,62 +15,6 @@ body {
     height: 100%;
 }
 
-
-/* navbar starts here */
-
-.navbar {
-    background-color: #22577A;
-    width: 100%;
-    font-size: 18px;
-}
-
-.nab {
-    height: 50px;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto;
-    list-style: none;
-    border-radius: 10px;
-    background: #12486d;
-    /*  background: linear-gradient(34deg, #4a1f963b, #ffffff57); */
-}
-
-.logo-nav {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-}
-
-.divider::before {
-    display: none;
-}
-
-.divider1::before {
-    display: none;
-}
-
-.divider2::before {
-    display: none;
-}
-
-.div:hover {
-    background: #096869;
-}
-
-.nab a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-
-/* nav finished  */
-
-
-/* nav finished  */
-
 .specialoffer {
     width: 100%;
     margin-right: 0rem;
@@ -331,6 +275,7 @@ img {
 
 
 /* Remove extra left and right margins, due to padding */
+
 
 /* .row {
     margin: 2rem;
