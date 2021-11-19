@@ -4,6 +4,9 @@
     width: 100%;
 }
 
+.feedback-form{
+    background-image: linear-gradient(to bottom, #accbee 0%, #e7f0fd 100%);
+}
 
 /* FOOTER */
 
@@ -25,6 +28,9 @@
     padding: 25px;
 }
 
+.footer .footer-content .footer-section p{
+   color: white;
+}
 .footer p,
 sapn,
 a {

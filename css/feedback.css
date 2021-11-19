@@ -83,3 +83,17 @@
   background-color: #e03a3c;
 }
 
+
+@media (max-width: 750px) {
+.review {
+
+height: 95vh;
+}
+}
+
+@media (max-width: 483px) {
+.review {
+height: 99vh;
+}
+}
+

@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>serviceb</title>
-
+    <!-- Main css -->
+    <link rel="stylesheet" href="../css/service.css">
     <!-- Font Icon -->
     <link rel="stylesheet" href="../fonts/material-icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../vendor/nouislider/nouislider.min.css">
 
-    <!-- Main css -->
-    <link rel="stylesheet" href="../css/service.css">
+
 </head>
 
 <body>
@@ -24,51 +24,76 @@
                     <img src="../images/SPRK_default_preset_name_custom – 1.jpg" alt="">
                 </div>
                 <div class="signup-form">
-                    <form method="POST" class="register-form" id="register-form">
+                    <img id="reg" src='../images/right.gif' height='100px' width='100px' style='margin-top:100px' hidden/>
+                    <img id="nreg" src='../images/wrong.gif' height='100px' width='100px' style='margin-top:100px' hidden/>
+                    
+                    <span id="ms">   </span>
+
+                    <form   class="register-form"  id="register-form">
                         <h1 style="text-align: center;">Register As a Service Provider</h1>
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
-                                    <label for="first_name" class="required">full name</label>
-                                    <input type="text" name="first_name" id="first_name" />
+                                    <label for="first_name" >full name</label>
+                                    <input type="text" name="fname" id="first_name" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="company" class="required">Experience</label>
+                                    <label for="company" >Experience</label>
                                     <input type="text" name="company" id="company" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="email" class="required">Email</label>
+                                    <label for="email" >Email</label>
                                     <input type="text" name="email" id="email" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="phone_number" class="required">Contact no.</label>
+                                    <label for="phone_number" >Contact no.</label>
                                     <input type="text" name="phone_number" id="phone_number" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-select">
                                     <div class="label-flex">
-                                        <label for="meal_preference" class="required">Govt. Identity</label>
+                                        <label for="meal_preference" >Govt. Identity</label>
                                     </div>
                                     <div class="select-list">
-                                        <input type="file" name="" id="">
+                                        <input type="file" accept="application/pdf" name="govtid" id="govtid">
                                     </div>
                                 </div>
                                 <div class="form-input">
-                                    <label for="chequeno" class="required">What will you serve</label>
-                                    <input type="text" name="chequeno" id="chequeno" />
+                                    <label for="chequeno" >What will you serve</label>
+                                    <input type="text" name="service" id="service" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="blank_name" class="required">Upload document for experience</label>
-                                    <input type="file" name="blank_name" id="blank_name" />
+                                    <label for="chequeno" >City</label>
+                                    <input type="text" name="city" id="city" />
                                 </div>
+                                <div class="form-input">
+                                    <label for="blank_name" >Upload document for experience</label>
+                                    <input type="file" name="expdoc" accept="application/pdf" id="expdoc" />
+                                </div>
+                                <hr>
+                                <div class="form-input">
+                                    <img src="../images/user.png" id="imguser" height="180px" style="  display: block;
+                                    margin-left: auto;
+                                    margin-right: auto; cursor: pointer;" width="180px" alt="">
+                                    <h4 style="text-align: center;margin:0;">Click user icon to upload image.</h4>
+                                    <h5 style="text-align: center;margin:0;">Image should be in jpg or png formate.</h5>
+                                    <input type="file" name="image" id="image" accept="image/png, image/jpeg" style="display:none">
+                                </div>
+                                <hr>
                             </div>
+                            
                         </div>
                         <div class="donate-us">
                             <label>Pay range expecting</label>
-                            <div class="price_slider ui-slider ui-slider-horizontal">
+                            <!-- <div class="price_slider ui-slider ui-slider-horizontal">
                                 <div id="slider-margin"></div>
                                 <span class="donate-value" id="value-lower"></span>
+                            </div> -->
+                            <div class="price-range">
+                                <h2> Price </h2>
+                                <input type="range" id="myRange" class="slider" name="pr" min="100" max="1000" value="500">
+                                <p> Value: <span id="value" style="background: green;"></span> </p>
                             </div>
                         </div>
                         <div class="form-submit">
@@ -81,14 +106,109 @@
         </div>
     </div>
 
+    <!--Problems-->
+    <!--1:  Pay range value input-->
+    <!--2:  Goverment id formate-->
+    <!--3:  Upload Experience Document-->
+    <!--4:  Profile picture-->
+    <!--5:  Service should be dropdown menu-->
+    <!--6:  Experience input should be number type-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
 
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/nouislider/nouislider.min.js"></script>
-    <script src="../vendor/wnumb/wNumb.js"></script>
-    <script src="../vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="../vendor/jquery-validation/dist/additional-methods.min.js"></script>
-    <script src="../serviceprovide.js"></script>
 
+        // Price Range 
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("value");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+  var x = slider.value;
+}
+
+slider.addEventListener("mousemove", function() {
+  var x = slider.value;
+  var color = `linear-gradient(90deg, rgb(117, 252, 117))${x}%, rgb(214, 214, 214)${x}%)`;
+  this.style.background = color;
+  
+})
+
+$("#imguser").click(function(){
+    $("#image").click();
+});
+
+
+       $("#register-form").submit(function(e){
+           e.preventDefault();
+            var frm=new FormData(this);
+           $.ajax({
+                 type: 'POST',
+                 url: '../php/serviceProvider.php',
+                 data: frm,
+                 dataType: 'json',
+                 contentType: false,
+                 cache: false,
+                 processData:false,
+                 beforeSend: function(){
+                  
+                   },
+                 success: function(data){
+                    
+                       if(data.code==1){
+                           $(".register-form").hide(1000,()=>{
+                             $("#reg").fadeIn(3000,()=>{
+                                 window.location.href="../index.php";
+                             });
+                           });
+                       }
+               },
+
+
+        //    var formData=new FormData();
+        //    var obj={
+        //        fname:$("#first_name").val(),
+        //        exp:$("#company").val(),
+        //        email:$("#email").val(),
+        //        mobile:$("#phone_number").val(),
+        //        service:$("#service").val()
+        //    };
+
+
+        //    var gvtid=$("#govtid").val();
+        //    formData.append('govtId',gvtid);
+
+        //    $.ajax({
+        //        url:"../php/serviceProvider.php",
+        //        method:"POST",
+        //        dataType:"json",
+        //        data:JSON.stringify(obj),
+        //        success:function(data){
+        //               console.log(data);
+        //               if(data.code==1){
+        //                   $(".register-form").hide(1000,()=>{
+        //                     $("#reg").fadeIn(3000,()=>{
+        //                         window.location.href="../index.php";
+        //                     });
+        //                   });
+        //               }
+        //                if(data.code==0){
+        //                 $(".register-form").hide(1000,()=>{
+        //                     $("#ms").text(data.message);
+        //                     $("#nreg").fadeIn(5000,()=>{
+        //                         window.location.href="./serviceprovide.html";
+        //                     });
+
+        //                   });
+        //               }
+        //        }
+           });
+       });
+
+    });
+</script>
 </body>
 
 </html>

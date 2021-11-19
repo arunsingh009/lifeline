@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Employees</title>
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- styles/css -->
+    <link rel="stylesheet" href="explore.css">
+
+</head>
+
+<body>
+
+    <div class="explore-container">
+        <div class="search-section">
+
+            <header>
+                <h1>Services</h1>
+                <div class="filter-box">
+                    <button onclick="myFun()" class="services-dropbtn">Select Sevice</btton>
+                        <div id="services-myDropdown" class="services-dropdown-content servuices-show">
+                            <input type="text" placeholder="Search Service" id="services-myInput" onkeyup="filterFun()">
+                            <li class="btn active" data-filter="all"> ALL </li>
+                            <li class="btn" data-filter="carpenter"> CARPENTER </li>
+                            <li class="btn" data-filter="electrician"> ELECTRICIAN </li>
+                            <li class="btn" data-filter="laundry"> LAUNDRY </li>
+                            <li class="btn" data-filter="cook"> COOK </li>
+                            <li class="btn" data-filter="homecare"> HOME CARE </li>
+                            <li class="btn" data-filter="cleaner"> BABYSITTER </li>
+                            <li class="btn" data-filter="technician"> TECHNICIAN </li>
+                            <li class="btn" data-filter="touristguide"> TOURIST GUIDE </li>
+                            <li class="btn" data-filter="security"> SECURITY GUARD </li>
+                            <li class="btn" data-filter="painter"> Painter </li>
+                            <li class="btn" data-filter="legalservices"> LEGAL SERVICES </li>
+                            <li class="btn" data-filter="eventplanner"> EVENT PLANNER </li>
+                            <li class="btn" data-filter="interiordesign"> INTERIOR DESIGN </li>
+                            <li class="btn" data-filter="construction&enginner"> CONSTRUCTION & ENGINEER </li>
+                            <li class="btn" data-filter="financial&accountiong"> FINANCIAL & ACCOUNTIONG </li>
+                            <li class="btn" data-filter="houseshifting"> HOUSE SHIFTING </li>
+                            <li class="btn" data-filter="mechanic"> MECHANIC </li>
+                            <li class="btn" data-filter="repairman"> REPAIRMAN </li>
+                            <li class="btn" data-filter="housecleaner"> HOUSE CLEANER </li>
+                            <li class="btn" data-filter="plumber"> PLUMBER </li>
+                        </div>
+                        <input type="text" id="em" style="display: none;">
+                </div>
+            </header>
+
+            <div class="price-range">
+                <h2> Price </h2>
+                <input type="range" id="myRange" class="slider" min="100" max="1000" value="500">
+                <p> Value: <span id="value"></span> </p>
+            </div>
+
+            <div class="location">
+                <h2>Location</h2>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Select City</button>
+                    <div id="myDropdown" class="dropdown-content show">
+                        <input type="text" placeholder="Search Location" id="myInput" onkeyup="filterFunction()">
+                        <li class="location">Andheri</li>
+                        <li class="location">Bandra</li>
+                        <li class="location">Bhubaneshwar</li>
+                        <li class="location">Borivali</li>
+                        <li class="location">Cuttack</li>
+                        <li class="location">Dahisar</li>
+                        <li class="location">Eachur Munderi</li>
+                        <li class="location">Firozobad</li>
+                        <li class="location">Goregaon</li>
+                        <li class="location">Guwahati</li>
+                        <li class="location">Haldia</li>
+                        <li class="location">Itwa, Uttar Pradesh</li>
+                        <li class="location">Jogeshwari</li>
+                        <li class="location">Juhu</li>
+                        <li class="location">Kochi</li>
+                        <li class="location">Kozhikode</li>
+                        <li class="location">Lakhanpur, Jammu And Kashmir</li>
+                        <li class="location">Maharastra</li>
+                        <li class="location">Manglaur Nagar Palika Parishad</li>
+                        <li class="location">New Delhi</li>
+                        <li class="location">Noida</li>
+                        <li class="location">Nagaon</li>
+                        <li class="location">Odaipatti</li>
+                        <li class="location">Other</li>
+                        <li class="location">Puri</li>
+                        <li class="location">Palasha</li>
+                        <li class="location">Rourkela</li>
+                        <li class="location">Shahjahanabad</li>
+                        <li class="location">Siri</li>
+                        <li class="location">Shahjahanabad</li>
+                        <li class="location">Thiruvananthapuram</li>
+                        <li class="location">Tughlqabad</li>
+                        <li class="location">Udaipur, Rajasthan</li>
+                        <li class="location">Vadali, Andhra Pradesh</li>
+                        <li class="location">Washi(Osmanabad)</li>
+                        <li class="location">Yenne Hole Marne</li>
+                        <li class="location">Zaheerabad</li>
+                        <input type="text" id="loc" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="emp-available">
+                <h2>Employee Available</h2>
+                <div class="choice-emp">
+                    <label class="employees" for="employee">Choose needed employee</label>
+                    <select id="emp">
+                        <option class="employe" value="employee">1</option>
+                        <option class="employe" value="employee">2</option>
+                        <option class="employe" value="employee">3</option>
+                        <option class="employe" value="employee">4</option>
+                        <option class="employe" value="employee">5</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="filtered-section">
+            <main>
+                <div class="slide-container">
+                    <section class="container" id="employees">
+
+                        <!-- <div class="employee carpenter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Steve Johns </p>
+                                <h2> CARPENTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee carpenter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Kai Parker </p>
+                                <h2> CARPENTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee carpenter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Paul Johns </p>
+                                <h2> CARPENTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee electrician">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Luis Merry </p>
+                                <h2> ELECTRICIAN </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee laundry">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Ashok Mehra </p>
+                                <h2> LAUNDRY </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee cook">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Samantha Kaur </p>
+                                <h2> COOK </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee cook">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Samantha Kaur </p>
+                                <h2> COOK </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee homecare">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Tony Stark </p>
+                                <h2> HOME CARE </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee cleaner">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Rebekha Mikelson </p>
+                                <h2> HOUSE CLEANER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee babysitter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Klause Mikelson </p>
+                                <h2> BABYSITTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee technician">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Damon Salvator </p>
+                                <h2> TECHNICIAN </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee touristguide">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Stefen Megas </p>
+                                <h2> TOURIST GUIDE </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>
+                        <div class="employee touristguide">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Cardi Megas </p>
+                                <h2> TOURIST GUIDE </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>             
+                        <div class="employee security">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Stefen Salvator </p>
+                                <h2> SECURITY GUARD </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>   
+                        <div class="employee painter">
+                            <img src="./images/s1.jpg" alt="">
+                            <div class="employee-details">
+                                <p> Stefen Salvator </p>
+                                <h2> PAINTER </h2>
+                                <a href="#"> Book Now </a>
+                            </div>
+                        </div>                                              -->
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    
+ 
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="explore.js"></script>
+
+</body>
+
+</html>

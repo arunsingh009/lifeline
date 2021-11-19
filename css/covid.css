@@ -1,7 +1,7 @@
 .covid-and-all {
     padding: 40px;
     height: 75vh;
-    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    
 }
 
 .inside-covid {
@@ -42,9 +42,6 @@
 .covid-content {
     padding-left: 30px;
     padding-top: 10px;
-    font-size: 17px;
-    font-weight: bold;
-    list-style-image: url(../images/right-arrow.png);
 }
 
 @media (max-width: 1200px) {
